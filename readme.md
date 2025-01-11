@@ -43,7 +43,7 @@ Fournit des informations sur le projet et sur l'utilisation d'Express.js.
 
 1. Clonez le dépôt :
    ```bash
-   git clone https://github.com/your-repo/express-web-app.git
+   git clone https://github.com/kferrandonFulbert/demo-express
    cd express-web-app
    ```
 
