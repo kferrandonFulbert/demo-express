@@ -34,21 +34,7 @@ const menuHTML = `
 </nav>
 `;
 
-// Routes
-app.get('/', (req, res) => {
-    const formHTML = `
-        ${menuHTML}
-        <h1>Choisissez votre navigateur préféré</h1>
-        <form action="/choix" method="POST">
-            <label for="navigateur">Navigateur :</label>
-            <select name="navigateur" id="navigateur">
-                ${navigateurs.map(nav => `<option value="${nav}">${nav}</option>`).join('')}
-            </select>
-            <button type="submit">Valider</button>
-        </form>
-    `;
-    res.send(formHTML);
-});
+
 
 app.get('/navigateurs', (req, res) => {
     res.json(navigateurs);
@@ -70,6 +56,22 @@ app.get('/apropos', (req, res) => {
         <h1>À propos</h1>
         <p>Ce site est conçu pour démontrer les fonctionnalités d'Express.js, y compris le routage, la gestion des formulaires et les middlewares.</p>
     `);
+});
+
+// Routes
+app.get('/', (req, res) => {
+    const formHTML = `
+        ${menuHTML}
+        <h1>Choisissez votre navigateur préféré</h1>
+        <form action="/choix" method="POST">
+            <label for="navigateur">Navigateur :</label>
+            <select name="navigateur" id="navigateur">
+                ${navigateurs.map(nav => `<option value="${nav}">${nav}</option>`).join('')}
+            </select>
+            <button type="submit">Valider</button>
+        </form>
+    `;
+    res.send(formHTML);
 });
 
 // Serveur
