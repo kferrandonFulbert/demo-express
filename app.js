@@ -6,7 +6,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
 
-// Middleware pour limiter les requêtes
+// Middleware pour limiter les requêtes (100 req / 15 min)
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000,
     max: 100,
